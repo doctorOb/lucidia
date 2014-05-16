@@ -80,8 +80,3 @@ test:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
 #
-
-production:
-  database: dgfdakpfbhoou
-  username: bxzircrkqljjjc
-  password: G-oQAmDDjliJV6dYh178OjjBLF

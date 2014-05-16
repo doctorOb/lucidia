@@ -24,15 +24,16 @@ default: &default
 development:
   <<: *default
   database: lucidia_development
+  encoding: unicode
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
   # When left blank, postgres will use the default role. This is
   # the same name as the operating system user that initialized the database.
-  #username: lucidia
+  username: danrobertson
 
   # The password associated with the postgres role (username).
-  #password:
+  password:
 
   # Connect on a TCP socket. Omitted by default since the client uses a
   # domain socket that doesn't need configuration. Windows does not have
@@ -78,8 +79,9 @@ test:
 #   production:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
+#
+
 production:
-  <<: *default
-  database: lucidia_production
-  username: lucidia
-  password: <%= ENV['LUCIDIA_DATABASE_PASSWORD'] %>
+  database: dgfdakpfbhoou
+  username: bxzircrkqljjjc
+  password: G-oQAmDDjliJV6dYh178OjjBLF

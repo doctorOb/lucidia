@@ -90,7 +90,7 @@
 	}
 
 .zz-b {
-	background-image: url('<%= asset_path(zz-transparent.png) %>');
+	background-image: url('zz-transparent.png');
 	position:fixed;
 	bottom:0;
 	right:0;

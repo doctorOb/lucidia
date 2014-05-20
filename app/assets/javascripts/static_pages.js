@@ -28,7 +28,6 @@ function bind_scroll_handler() {
 	var title = $('.title');
 	$(window).scroll(function(){
 		var scrY = document.body.scrollTop;
-		console.log(scrY);
 		if (scrY < 20) {
 			title.removeClass('hidden');
 		}
@@ -92,6 +91,9 @@ function init_menu() {
 			if (document.body.scrollTop > 20) {
 				$('.title').addClass('hidden');
 			}
+			if (window.href != '/'){
+				return;
+			}
 			$('.share.link').removeClass('shown');
 			focusEditor();
 		},
@@ -126,6 +128,7 @@ function init_menu() {
 function init_all() {
 	bind_scroll_handler();
 	init_menu();
+	console.log('initializeed');
 
 	var editor = $('#editor');
 	if (editor) {
@@ -158,10 +161,16 @@ function init_all() {
 
 	}
 
-	$('#create').click(function(){
+	$('#create').click(function(e){
+		e.preventDefault();
 		localStorage.clear();
 		location.href = '/';
-	})
+	});
+
+	$('#about').click(function(e){
+		e.preventDefault();
+		location.replace('/about');
+	});
 
 
 }

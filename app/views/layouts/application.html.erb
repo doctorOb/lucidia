@@ -9,13 +9,12 @@
   <script type="text/javascript">
     $(document).foundation();
     $(document).ready(function(){
+    	init_all();
+    	console.log('passed init');
     	if($('#editor')){
 			$('#editor').hallo(); //instantiate the minimalist rich text editor
 			$('#editor').focus();
     	}
-
-    	init_all();
-
     });
   </script>
 </head>
@@ -28,7 +27,7 @@
 			<a href="#" class="menu-trigger"><span></span></a>
 			<ul>
 				<li><a id="create" href="/" class="item">Create</a></li>
-				<li><a href="/about" class="item">About</a></li>
+				<li><a href="/about" id="about" class="item">About</a></li>
 			</ul>
 		</nav>
 		

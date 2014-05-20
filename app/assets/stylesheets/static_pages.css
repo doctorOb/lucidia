@@ -5,7 +5,7 @@
 }
 
 a:hover {
-	background: inherit !important;
+	background-color: rgba(0,0,0,0);
 	color: #754141 !important;
 }
 

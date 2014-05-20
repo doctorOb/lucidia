@@ -1,0 +1,29 @@
+
+#editor {
+	font: "Avenir", "proxima-nova", "Helvetica Neue", Helvetica, arial, sans-serif;
+	font-size: 1.2em;
+	text-shadow: 0 1px 6px rgba(111, 111, 111, 0.62);
+	color: #FFFFFF;
+	outline: none !important;
+
+}
+
+body {
+	background: #ccc !important;
+}
+
+.title {
+	margin: 10px 0 10px 0;
+	font-size: 5rem;
+	letter-spacing: -1px;
+	font-weight: bold;
+	text-shadow: 0 1px 6px rgba(255, 255, 255, 0.81);
+	color: rgba(44, 44, 44, 1);
+	/* font: 400 16px/20px "freight-sans-pro", Helvetica, Arial, Sans-Serif; */
+	
+	font-weight: 100;
+	letter-spacing: 0.3em;
+	text-transform: uppercase;
+	display: block;
+	width: 100%;
+}

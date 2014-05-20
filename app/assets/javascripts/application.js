@@ -12,5 +12,13 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require rangy/rangy-core.js
 //= require turbolinks
+//= require foundation
+//= require foundation.topbar
+//= require foundation.offcanvas
 //= require_tree .
+//= require jquery.ui.all
+//= require hallo
+
+

@@ -5,10 +5,41 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+
+  <script>
+    $(document).foundation();
+    $(document).ready(function(){
+    	$('#editor').hallo();
+    });
+  </script>
 </head>
 <body>
+	<div class="off-canvas-wrap" data-offcanvas>
+		<div class="inner-wrap">
+			<nav class="tab-bar">
+				<section class="left-small">
+					<a class="left-off-canvas-toggle menu-icon" href="#"><span></span></a>
+				</section>
 
-<%= yield %>
+				<section class="middle tab-bar-section">
+					<h1 class="title">Lucidia</h1>
+				</section>
+			</nav>
+			<aside class="left-off-canvas-menu">
+				This is the actual menu
+			</aside>
+			<div class="row">
+				<%= yield %>
+				
+				<div class="small-9 columns">
+					<div id="editor">
+						Click here to start writing your dream...
+					</div>
+				</div>
+			</div>
 
+			<a class="exit-off-canvas"></a>
+		</div>
+	</div>
 </body>
 </html>

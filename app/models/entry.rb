@@ -1,7 +1,5 @@
 class Entry < ActiveRecord::Base
-	validates :content, :length => { :minimum => 60 }
-	validates :title, :length => { :minimum => 2 }
-
+#	validates :content, :length => { :minimum => 1 }
 	before_create :generate_url
 
 

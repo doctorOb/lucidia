@@ -20,5 +20,6 @@
 //= require_tree .
 //= require jquery.ui.all
 //= require hallo
+//= require static_pages
 
 

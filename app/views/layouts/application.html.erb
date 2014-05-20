@@ -6,40 +6,35 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 
-  <script>
+  <script type="text/javascript">
     $(document).foundation();
     $(document).ready(function(){
-    	$('#editor').hallo();
+    	$('#editor').hallo(); //instantiate the minimalist rich text editor
+    	init_all();
+    	$('#editor').focus();
     });
   </script>
 </head>
 <body>
-	<div class="off-canvas-wrap" data-offcanvas>
-		<div class="inner-wrap">
-			<nav class="tab-bar">
-				<section class="left-small">
-					<a class="left-off-canvas-toggle menu-icon" href="#"><span></span></a>
-				</section>
+	<div id="container">
+		<div class="title">
+			<span class="name">Lucidia</span>
+			<span class="moto">An open dream journal to share with the world.</span>
+		</div>
+		<nav id="side-menu" class="side-menu">
+			<a href="#" class="menu-trigger"><span></span></a>
+			<ul>
+				<li><a href="" class="item">Create</a></li>
+				<li><a href="" class="item">About</a></li>
+			</ul>
+		</nav>
+		
+		<%= yield %>
+		
+		<div class="zz-b">
 
-				<section class="middle tab-bar-section">
-					<h1 class="title">Lucidia</h1>
-				</section>
-			</nav>
-			<aside class="left-off-canvas-menu">
-				This is the actual menu
-			</aside>
-			<div class="row">
-				<%= yield %>
-				
-				<div class="small-9 columns">
-					<div id="editor">
-						Click here to start writing your dream...
-					</div>
-				</div>
-			</div>
-
-			<a class="exit-off-canvas"></a>
 		</div>
 	</div>
+
 </body>
 </html>

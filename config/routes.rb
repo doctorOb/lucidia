@@ -5,6 +5,8 @@ Rails.application.routes.draw do
 
   get 'about' => 'static_pages#about'
 
+  get '/d/:hash' => 'entries#fetch_by_hash', :as => :dream_hash
+
   resources :entries
 
   # The priority is based upon order of creation: first created -> highest priority.

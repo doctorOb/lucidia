@@ -4,6 +4,11 @@
 	box-sizing: border-box;
 }
 
+a:hover {
+	background: inherit !important;
+	color: #754141 !important;
+}
+
 .dream-view, .about {
 	font-family: 'Avenir','Arial',sans-serif;
 	color: #262626;

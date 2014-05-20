@@ -67,6 +67,7 @@ a:hover {
 	top: 10px;
 	width: 500px;
 	font-size: 2em;
+	display:none;
 }
 
 
@@ -95,7 +96,6 @@ a:hover {
 	}
 
 .zz-b {
-	background-image: url('zz-transparent.png');
 	position:fixed;
 	bottom:0;
 	right:0;

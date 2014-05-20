@@ -56,7 +56,6 @@ function update_entry() {
 			}
 		},
 		success: function(resp){
-			//display share link
 			console.log("update successful");
 		}
 	});
@@ -116,6 +115,7 @@ function init_menu() {
 				var url = document.location.origin + '/d/' + localStorage['rurl'];
 				$('.share.link input').val(url);
 				$('.share.link').addClass('shown');
+				$('.share.link input').focus().select();
 			}
 			overlay.addEventListener(eventtype, closeClickFn);
 		}
@@ -133,10 +133,10 @@ function init_all() {
 			editor.html(localStorage['recent']);
 			notifyShare();
 		} else {
+			$('.share.intro').fadeIn(500);
 			editor.one('keydown',function(){
 				editor.html('');
 				setTimeout(create_entry,20000);
-				$('.share.intro').fadeIn(500);
 				setTimeout(function(){
 					$('.share.intro').fadeOut(500);
 				},5000);
@@ -160,6 +160,7 @@ function init_all() {
 
 	$('#create').click(function(){
 		localStorage.clear();
+		location.pathname = '/';
 	})
 
 

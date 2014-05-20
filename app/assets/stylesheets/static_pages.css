@@ -4,8 +4,8 @@
 	box-sizing: border-box;
 }
 
-.dream-view {
-	font-family: 'Open Sans','proxima-nova','Helvetica','Avenir','Arial',sans-serif;
+.dream-view, .about {
+	font-family: 'Avenir','Arial',sans-serif;
 	color: #262626;
 	-webkit-font-smoothing: antialiased;
 	position: relative;
@@ -13,8 +13,10 @@
 	margin: .7em 0 1em 0;
 	font-size: 1.3em;
 	min-width: 60%;
+	width: 60%;
 	margin-left: 10px;
 	position: absolute;
+	text-shadow: 0 1px 6px rgba(111, 111, 111, 0.62);
 }
 
 .share {

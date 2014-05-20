@@ -124,8 +124,8 @@ function init_menu() {
 }
 
 function init_all() {
-	init_menu();
 	bind_scroll_handler();
+	init_menu();
 
 	var editor = $('#editor');
 	if (editor) {
@@ -160,7 +160,7 @@ function init_all() {
 
 	$('#create').click(function(){
 		localStorage.clear();
-		location.pathname = '/';
+		location.href = '/';
 	})
 
 

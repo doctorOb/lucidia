@@ -9,9 +9,13 @@
   <script type="text/javascript">
     $(document).foundation();
     $(document).ready(function(){
-    	$('#editor').hallo(); //instantiate the minimalist rich text editor
+    	if($('#editor')){
+			$('#editor').hallo(); //instantiate the minimalist rich text editor
+			$('#editor').focus();
+    	}
+
     	init_all();
-    	$('#editor').focus();
+
     });
   </script>
 </head>

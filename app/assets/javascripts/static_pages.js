@@ -13,8 +13,15 @@ function handle_share() {
 	$('#share')
 }
 
+function focusEditor() {
+	$('#editor').focus();
+}
+
 function notifyShare() {
-	console.log('you can now share at url: ' + localStorage['rurl']);
+	$('.share.tip').addClass('shown')
+	setTimeout(function(){
+		$('.share.tip').removeClass('shown');
+	},10000);
 }
 //Fade the title in and out when the user is writing enough words for scrolling to happen
 function bind_scroll_handler() {
@@ -33,7 +40,13 @@ function bind_scroll_handler() {
 }
 
 function update_entry() {
+
 	var content = $('#editor').html();
+	var id = localStorage['rid'];
+	if (!id) {
+		create_entry();
+		return;
+	}
 	$.ajax({
 		url: "/entries/" + localStorage['rid'] + '.json',
 		type: "PUT",
@@ -80,6 +93,7 @@ function init_menu() {
 			if (document.body.scrollTop > 20) {
 				$('.title').addClass('hidden');
 			}
+			$('.share.link').removeClass('shown');
 			focusEditor();
 		},
 		closeClickFn = function (e) {
@@ -98,6 +112,11 @@ function init_menu() {
 		} else {
 			menu.removeClass('close').addClass('open')
 			$('.title').removeClass('hidden');
+			if (localStorage['rurl']) {
+				var url = document.location.origin + '/d/' + localStorage['rurl'];
+				$('.share.link input').val(url);
+				$('.share.link').addClass('shown');
+			}
 			overlay.addEventListener(eventtype, closeClickFn);
 		}
 	});
@@ -112,22 +131,36 @@ function init_all() {
 	if (editor) {
 		if (localStorage['recent']) {
 			editor.html(localStorage['recent']);
+			notifyShare();
 		} else {
 			editor.one('keydown',function(){
-				create_entry();
-				console.log('creating post');
+				editor.html('');
+				setTimeout(create_entry,20000);
+				$('.share.intro').fadeIn(500);
+				setTimeout(function(){
+					$('.share.intro').fadeOut(500);
+				},5000);
 			});
 		}
 
 		var updateTO = 0;
 		var storeTO = 0;
 		editor.on('keypress',function(){
+			clearTimeout(storeTO);
+			clearTimeout(updateTO);
 			storeTO = setTimeout(function(){
 				localStorage['recent'] = editor.html();
-			},1000);
-		})
+			},500);
+			updateTO = setTimeout(function(){
+				update_entry();
+			},3000);
+		});
 
 	}
+
+	$('#create').click(function(){
+		localStorage.clear();
+	})
 
 
 }

@@ -2823,14 +2823,15 @@
         var old, widget;
         widget = event.data;
         if (event.keyCode === 27) {
-          old = widget.getContents();
-          widget.restoreOriginalContent(event);
-          widget._trigger("restored", null, {
-            editable: widget,
-            content: widget.getContents(),
-            thrown: old
-          });
-          return widget.turnOff();
+          //this would undo all changes...not desired functionality
+          // old = widget.getContents();
+          // widget.restoreOriginalContent(event);
+          // widget._trigger("restored", null, {
+          //   editable: widget,
+          //   content: widget.getContents(),
+          //   thrown: old
+          // });
+          // return widget.turnOff();
         }
       },
       _rangesEqual: function(r1, r2) {

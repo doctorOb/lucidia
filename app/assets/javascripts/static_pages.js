@@ -161,7 +161,7 @@ function init_all() {
 	$('#create').click(function(e){
 		e.preventDefault();
 		localStorage.clear();
-		location.href = '/';
+		location.replace('/');
 	});
 
 	$('#about').click(function(e){
@@ -169,16 +169,6 @@ function init_all() {
 		location.replace('/about');
 	});
 
-	document.onkeydown = function (e) {
-		console.log(e.which);
-		if(e.which == 27 && document.activeElement.id === "editor"){
-			e.which = 0;
-			console.log('cancel');
-			e.preventDefault();
-			e.stopPropagation();
-			return false;
-		}
-	}
 
 
 }

@@ -91,10 +91,7 @@ function init_menu() {
 			if (document.body.scrollTop > 20) {
 				$('.title').addClass('hidden');
 			}
-			if (window.href != '/'){
-				return;
-			}
-			$('.share.link').removeClass('shown');
+			$('.share.link').removeClass('shown').addClass('hidden');
 			focusEditor();
 		},
 		closeClickFn = function (e) {
@@ -171,6 +168,17 @@ function init_all() {
 		e.preventDefault();
 		location.replace('/about');
 	});
+
+	document.onkeydown = function (e) {
+		console.log(e.which);
+		if(e.which == 27 && document.activeElement.id === "editor"){
+			e.which = 0;
+			console.log('cancel');
+			e.preventDefault();
+			e.stopPropagation();
+			return false;
+		}
+	}
 
 
 }

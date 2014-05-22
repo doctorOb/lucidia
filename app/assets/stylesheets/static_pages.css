@@ -54,6 +54,10 @@ a:hover {
 	visibility: hidden;
 }
 
+.hidden {
+	visibility: none;
+}
+
 .share.link.shown {
 	visibility: visible;
 	z-index: 2000;
